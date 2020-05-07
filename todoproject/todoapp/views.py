@@ -17,3 +17,16 @@ def submit(request):
     }
     return render(request,'list.html',context=mydictionary)
 
+def delete(request,id):
+    obj = Todo.objects.get(id=id)
+    obj.delete()
+    mydictionary = {
+        "alltodos" : Todo.objects.all()
+    }
+    return render(request,'list.html',context=mydictionary)
+
+def list(request):
+    mydictionary = {
+        "alltodos" : Todo.objects.all()
+    }
+    return render(request,'list.html',context=mydictionary)
