@@ -30,3 +30,9 @@ def list(request):
         "alltodos" : Todo.objects.all()
     }
     return render(request,'list.html',context=mydictionary)
+
+def sortbypriority(request):
+    mydictionary = {
+        "alltodos" : Todo.objects.all().order_by('-priority')
+    }
+    return render(request,'list.html',context=mydictionary)
