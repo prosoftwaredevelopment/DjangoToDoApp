@@ -29,16 +29,17 @@
           <a class="nav-link" href="{% url 'list' %}">List All Todo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'sortbypriority' %}">Sort By Priority</a>
+          <a class="nav-link" href="{% url 'sortdata' %}">Sort By Priority</a>
         </li>
     </div>
   </nav>
   {% block content %}
   <div class="row">
     <div class="col-md-6" style="margin: 0 auto;">
-      <form action="{% url 'query' %}">
+      <form action="{% url 'searchdata' %}">
         <label for="query">Search By Title</label>
         <input type="search" class="form-control" name="query" id="query">
+        <button type="submit" class="btn btn-primary" style="display: block;margin: 1rem auto;">Search</button>
       </form>
     </div>
   </div>
